@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：JS_History
+  File name(文件名): test
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/3/19
+  Time(创建时间)： 12:50
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="test1.js"></script>
+</head>
+<body>
+<button onclick="myBack()">back()</button>
+<button onclick="myForward()">forward()</button>
+<button onclick="myGo()">go()</button>
+<button onclick="myPushState()">pushState()</button>
+<button onclick="myReplaceState()">replaceState()</button>
+<script type="text/javascript">
+    function myBack()
+    {
+        history.back();
+    }
+
+    function myForward()
+    {
+        history.forward();
+    }
+
+    function myGo()
+    {
+        var num = prompt('请输入一个整数', '1');
+        history.go(num);
+    }
+
+    function myPushState()
+    {
+        var state = {'page_id': 1, 'user_id': 5}
+        var title = 'JavaScript'
+        var url = 'index.html'
+        history.pushState(state, title, url)
+        console.log(history.state);
+    }
+
+    function myReplaceState()
+    {
+        var state = {'page_id': 3, 'user_id': 5}
+        var title = 'history'
+        var url = 'index.html'
+        history.replaceState(state, title, url)
+        console.log(history.state);
+    }
+</script>
+</body>
+</html>
